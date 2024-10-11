@@ -6,11 +6,11 @@ Module for element length.
 
 """
 
-from typing import Sequence, Union, Any, List, Tuple
+from typing import Iterable, List, Tuple, Sequence
 
 
 def element_length(
-    lst: Sequence[Union[Sequence[Any], str]]
-) -> List[Tuple[Sequence[Any], int]]:
+    lst: Iterable[Sequence]
+) -> List[Tuple[Sequence, int]]:
     """Return the length of elements in a list."""
     return [(i, len(i)) for i in lst]
