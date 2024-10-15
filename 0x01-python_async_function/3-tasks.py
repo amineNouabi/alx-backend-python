@@ -6,13 +6,12 @@ Module for tasks.
 """
 
 import asyncio
-from typing import List
 
-wait_n = __import__('1-concurrent_coroutines').wait_n
+wait_random = __import__('0-basic_async_syntax').wait_random
 
 
-def task_wait_n(n: int, max_delay: int) -> List[float]:
+def task_wait_random(max_delay: int) -> asyncio.Task:
     """
-    Return the list of all the delays.
+    Returns a asyncio.Task.
     """
-    return asyncio.run(wait_n(n, max_delay))
+    return asyncio.create_task(wait_random(max_delay))
